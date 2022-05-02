@@ -1,1 +1,1 @@
-# nuxt-template
+# blog
