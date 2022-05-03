@@ -1,11 +1,13 @@
 <script setup>
-const message = await $fetch("/api/hello");
 </script>
 
 <template>
-	<div class="flex justify-center items-center h-screen">
-		<h1 class="text-3xl text-green-700">
-			{{ message }}
-		</h1>
+	<div class="m-6">
+		<div class="container grid md:grid-cols-2 lg:grid-cols-3 auto-rows-[240px] gap-x-12 gap-y-6 mx-auto">
+			<Card />
+			<MiniCard :key="i" v-for="i in 9">
+				{{ i }}
+			</MiniCard>
+		</div>
 	</div>
 </template>
