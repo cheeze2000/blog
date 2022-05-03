@@ -4,6 +4,6 @@
 
 <style>
 html {
-	@apply bg-sage
+	@apply bg-primary
 }
 </style>
