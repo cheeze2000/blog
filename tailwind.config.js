@@ -1,7 +1,4 @@
 module.exports = {
-	plugins: [
-		require("@tailwindcss/typography")
-	],
 	theme: {
 		container: {
 			screens: {
