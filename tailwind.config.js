@@ -10,9 +10,9 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				"primary": "#838e83",
+				"primary": "#3b5249",
 				"secondary": "#c9cebd",
-				"accent": "#343434"
+				"accent": "#d7816a"
 			},
 			spacing: {
 				"18": "4.5rem",
