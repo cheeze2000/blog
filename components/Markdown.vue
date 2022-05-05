@@ -31,19 +31,19 @@ article {
 	}
 
 	:deep(h1) {
-		@apply pb-2.5 mt-9 mb-4 font-linotte text-4xl text-secondary border-b border-b-secondary
+		@apply pb-2.5 mt-9 mb-6 font-linotte text-4xl text-secondary border-b border-b-secondary
 	}
 
 	:deep(h2) {
-		@apply pb-2 mt-7 mb-4 font-linotte text-3xl text-secondary border-b border-b-secondary
+		@apply pb-2 mt-7 mb-6 font-linotte text-3xl text-secondary border-b border-b-secondary
 	}
 
 	:deep(h3) {
-		@apply mt-6 mb-4 font-linotte text-2xl text-secondary
+		@apply mt-6 mb-6 font-linotte text-2xl text-secondary
 	}
 
 	:deep(p) {
-		@apply mb-4 font-lato text-xl leading-normal text-secondary
+		@apply mb-6 font-lato text-xl leading-normal text-secondary
 	}
 
 	:deep(p code) {
@@ -55,7 +55,7 @@ article {
 	}
 
 	:deep(pre) {
-		@apply overflow-x-auto p-4 mb-4 text-secondary bg-zinc-800 rounded
+		@apply overflow-x-auto p-4 mb-6 text-secondary bg-zinc-800 rounded
 	}
 
 	:deep(pre code) {
@@ -63,19 +63,19 @@ article {
 	}
 
 	:deep(ol) {
-		@apply pl-8 mb-4 font-lato text-xl list-decimal text-secondary
+		@apply pl-8 mb-6 font-lato text-xl list-decimal text-secondary
 	}
 
 	:deep(ul) {
-		@apply pl-8 mb-4 font-lato text-xl list-disc text-secondary
+		@apply pl-8 mb-6 font-lato text-xl list-disc text-secondary
 	}
 
 	:deep(img) {
-		@apply mx-auto mb-4
+		@apply mx-auto mb-3
 	}
 
 	:deep(img + em) {
-		@apply block mx-auto mb-4 not-italic text-center text-secondary
+		@apply block mx-auto mb-6 not-italic text-center text-secondary
 	}
 }
 </style>
