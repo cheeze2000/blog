@@ -31,23 +31,23 @@ article {
 	}
 
 	:deep(h1) {
-		@apply pb-2.5 mt-9 mb-4 text-4xl text-secondary border-b border-b-secondary
+		@apply pb-2.5 mt-9 mb-4 font-linotte text-4xl text-secondary border-b border-b-secondary
 	}
 
 	:deep(h2) {
-		@apply pb-2 mt-7 mb-4 text-3xl text-secondary border-b border-b-secondary
+		@apply pb-2 mt-7 mb-4 font-linotte text-3xl text-secondary border-b border-b-secondary
 	}
 
 	:deep(h3) {
-		@apply mt-6 mb-4 text-2xl text-secondary
+		@apply mt-6 mb-4 font-linotte text-2xl text-secondary
 	}
 
 	:deep(p) {
-		@apply mb-4 text-lg text-secondary
+		@apply mb-4 font-lato text-xl leading-normal text-secondary
 	}
 
 	:deep(p code) {
-		@apply px-1.5 py-0.5 text-base bg-secondary/10
+		@apply px-1.5 py-0.5 font-inconsolata text-lg bg-secondary/10
 	}
 
 	:deep(a) {
@@ -58,12 +58,16 @@ article {
 		@apply overflow-x-auto p-4 mb-4 text-secondary bg-zinc-800 rounded
 	}
 
+	:deep(pre code) {
+		@apply font-inconsolata text-xl
+	}
+
 	:deep(ol) {
-		@apply pl-8 mb-4 text-lg list-decimal text-secondary
+		@apply pl-8 mb-4 font-lato text-xl list-decimal text-secondary
 	}
 
 	:deep(ul) {
-		@apply pl-8 mb-4 text-lg list-disc text-secondary
+		@apply pl-8 mb-4 font-lato text-xl list-disc text-secondary
 	}
 
 	:deep(img) {
