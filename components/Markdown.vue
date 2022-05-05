@@ -67,7 +67,11 @@ article {
 	}
 
 	:deep(img) {
-		@apply mx-auto
+		@apply mx-auto mb-4
+	}
+
+	:deep(img + em) {
+		@apply block mx-auto mb-4 not-italic text-center text-secondary
 	}
 }
 </style>
