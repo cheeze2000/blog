@@ -51,7 +51,7 @@ article {
 	}
 
 	:deep(a) {
-		@apply text-accent underline
+		@apply hover:text-accent underline underline-offset-2
 	}
 
 	:deep(pre) {
