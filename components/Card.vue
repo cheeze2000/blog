@@ -13,7 +13,7 @@ import { Icon } from "@iconify/vue";
 			/>
 		</div>
 		<div class="flex flex-col grow justify-evenly pt-18 text-xl text-secondary">
-			<div class="flex justify-evenly">
+			<div class="flex justify-evenly font-lato">
 				<div class="flex flex-col py-2 items-center hover:text-accent cursor-pointer">
 					<Icon class="w-9 h-9" icon="mdi:github" />
 					<span>cheeze2000</span>
