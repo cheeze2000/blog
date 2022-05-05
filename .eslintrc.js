@@ -12,7 +12,8 @@ module.exports = {
 	],
 	"globals": {
 		"$fetch": "readonly",
-		"defineEventHandler": "readonly"
+		"defineEventHandler": "readonly",
+		"useHead": "readonly"
 	},
 	"parserOptions": {
 		"ecmaVersion": 13,
