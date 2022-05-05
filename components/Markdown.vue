@@ -46,6 +46,10 @@ article {
 		@apply mb-4 text-lg text-secondary
 	}
 
+	:deep(p code) {
+		@apply px-1.5 py-0.5 text-base bg-secondary/10
+	}
+
 	:deep(a) {
 		@apply text-accent underline
 	}
