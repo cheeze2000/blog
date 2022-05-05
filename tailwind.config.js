@@ -14,6 +14,11 @@ module.exports = {
 				"secondary": "#c9cebd",
 				"accent": "#d7816a"
 			},
+			fontFamily: {
+				"inconsolata": ["Inconsolata"],
+				"lato": ["Lato"],
+				"linotte": ["Linotte"]
+			},
 			spacing: {
 				"18": "4.5rem",
 				"2/5": "40%"
