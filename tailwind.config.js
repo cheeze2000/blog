@@ -11,8 +11,8 @@ module.exports = {
 		extend: {
 			colors: {
 				"primary": "#3b5249",
-				"secondary": "#c9cebd",
-				"accent": "#d7816a"
+				"secondary": "#e0e6d3",
+				"accent": "#f5c964"
 			},
 			fontFamily: {
 				"inconsolata": ["Inconsolata"],
