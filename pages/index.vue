@@ -7,11 +7,11 @@ useHead({
 		{ name: "description", content: "A personal blog where I demystify and share the new things I learned." },
 		{ name: "theme-color", content: "#3b5249" },
 		{ property: "og:description", content: "A personal blog where I demystify and share the new things I learned." },
-		{ property: "og:title", content: "cheeze2000" },
+		{ property: "og:title", content: "cheeze2000.net" },
 		{ property: "og:type", content: "website" },
 		{ property: "og:url", content: "https://cheeze2000.net" }
 	],
-	title: "cheeze2000"
+	title: "cheeze2000.net"
 });
 </script>
 
