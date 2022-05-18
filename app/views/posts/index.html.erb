@@ -1,0 +1,17 @@
+<% content_for :head do %>
+  <%==
+    generate_meta_tags(
+      title: "cheeze2000.net",
+      description: "A personal blog where I demystify and share the new things I learned.",
+      url: root_url
+    )
+  %>
+<% end %>
+
+<div class="container grid md:grid-cols-2 lg:grid-cols-3 auto-rows-[180px] gap-x-12 gap-y-6 p-6 mx-auto">
+  <%= render(ProfileCardComponent.new) %>
+  <% @posts.each do |post| %>
+    <%= render(PostCardComponent.new(post: post)) %>
+  <% end %>
+  <%= render(NavCardComponent.new(prev_page: path_to_prev_page(@posts), next_page: path_to_next_page(@posts))) %>
+</div>

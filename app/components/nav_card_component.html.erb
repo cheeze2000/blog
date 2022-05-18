@@ -1,0 +1,34 @@
+<% if @prev_page or @next_page %>
+  <div class="flex gap-1 font-noto bg-secondary rounded-lg border-4 border-secondary cursor-pointer">
+    <% if @prev_page %>
+      <%= link_to @prev_page, class: "flex flex-col flex-1 justify-center items-center text-secondary hover:text-accent bg-primary rounded-l" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-18 h-18" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M8.5 7.5c5.185-.47 8.52 1.53 10 6c-2.825-3.14-6.341-3.718-10-2v3l-5-5l5-5z"></path></svg>
+        <span class="text-xl">
+          Prev
+        </span>
+      <% end %>
+    <% else %>
+      <div aria-disabled="true" class="flex flex-col flex-1 justify-center items-center text-secondary/30 bg-primary rounded-l cursor-not-allowed">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-18 h-18" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M8.5 7.5c5.185-.47 8.52 1.53 10 6c-2.825-3.14-6.341-3.718-10-2v3l-5-5l5-5z"></path></svg>
+        <span class="text-xl">
+          Prev
+        </span>
+      </div>
+    <% end %>
+    <% if @next_page %>
+      <%= link_to @next_page, class: "flex flex-col flex-1 justify-center items-center text-secondary hover:text-accent bg-primary rounded-r" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-18 h-18" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M12.5 7.5c-5.185-.47-8.52 1.53-10 6c2.825-3.14 6.341-3.718 10-2v3l5-5l-5-5z"></path></svg>
+        <span class="text-xl">
+          Next
+        </span>
+      <% end %>
+    <% else %>
+      <div aria-disabled="true" class="flex flex-col flex-1 justify-center items-center text-secondary/30 bg-primary rounded-r cursor-not-allowed">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-18 h-18" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M12.5 7.5c-5.185-.47-8.52 1.53-10 6c2.825-3.14 6.341-3.718 10-2v3l5-5l-5-5z"></path></svg>
+        <span class="text-xl">
+          Next
+        </span>
+      </div>
+    <% end %>
+  </div>
+<% end %>
