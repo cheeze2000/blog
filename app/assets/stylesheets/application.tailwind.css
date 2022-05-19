@@ -60,6 +60,6 @@
   @apply mx-auto mb-3
 }
 
-.redcarpet img + em {
-  @apply block mx-auto mb-6 not-italic text-center text-secondary
+.redcarpet img + u {
+  @apply block mx-auto mb-6 text-center text-secondary no-underline
 }
