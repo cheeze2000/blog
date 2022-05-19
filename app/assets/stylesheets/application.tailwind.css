@@ -36,6 +36,10 @@
   @apply px-1.5 py-0.5 font-inconsolata text-lg bg-secondary/10
 }
 
+.redcarpet u {
+  @apply underline underline-offset-2
+}
+
 .redcarpet a {
   @apply hover:text-accent underline underline-offset-2
 }
