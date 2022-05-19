@@ -41,7 +41,7 @@
 }
 
 .redcarpet pre {
-  @apply overflow-x-auto p-4 mb-6 text-secondary bg-zinc-800 rounded
+  @apply overflow-x-auto mb-6 text-secondary rounded
 }
 
 .redcarpet pre code {
