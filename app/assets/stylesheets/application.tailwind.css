@@ -29,7 +29,7 @@
 }
 
 .redcarpet p {
-  @apply mb-6 font-noto text-xl leading-normal text-secondary
+  @apply mb-6 font-rubik text-xl leading-normal text-secondary
 }
 
 .redcarpet p code {
@@ -53,11 +53,11 @@
 }
 
 .redcarpet ol {
-  @apply pl-8 mb-6 font-noto text-xl list-decimal text-secondary
+  @apply pl-8 mb-6 font-rubik text-xl list-decimal text-secondary
 }
 
 .redcarpet ul {
-  @apply pl-8 mb-6 font-noto text-xl list-disc text-secondary
+  @apply pl-8 mb-6 font-rubik text-xl list-disc text-secondary
 }
 
 .redcarpet img {

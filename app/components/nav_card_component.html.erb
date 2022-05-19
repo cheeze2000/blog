@@ -1,5 +1,5 @@
 <% if @prev_page or @next_page %>
-  <div class="flex gap-1 font-noto bg-secondary rounded-lg border-4 border-secondary cursor-pointer">
+  <div class="flex gap-1 font-rubik bg-secondary rounded-lg border-4 border-secondary cursor-pointer">
     <% if @prev_page %>
       <%= link_to @prev_page, class: "flex flex-col flex-1 justify-center items-center text-secondary hover:text-accent bg-primary rounded-l" do %>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-18 h-18" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M8.5 7.5c5.185-.47 8.52 1.53 10 6c-2.825-3.14-6.341-3.718-10-2v3l-5-5l5-5z"></path></svg>

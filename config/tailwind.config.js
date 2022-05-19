@@ -23,7 +23,7 @@ module.exports = {
       fontFamily: {
         "inconsolata": ["Inconsolata"],
         "linotte": ["Linotte"],
-        "noto": ["Noto Sans"]
+        "rubik": ["Rubik"]
       },
       spacing: {
         "18": "4.5rem",
