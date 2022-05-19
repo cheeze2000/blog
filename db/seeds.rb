@@ -41,8 +41,8 @@ end
     title: "Post #{n}",
     slug: "post-#{n}",
     description: "This is the description for Post #{n}.",
-    published: true,
-    pinned: false,
+    published: [false, true].sample,
+    pinned: [false, true].sample,
     content: sample_content(n)
   )
 end
