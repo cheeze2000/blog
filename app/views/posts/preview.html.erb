@@ -1,0 +1,18 @@
+<% content_for :head do %>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+<% end %>
+
+<div class="container flex flex-col gap-18 p-6 mx-auto">
+  <div class="flex justify-between">
+    <%= link_to dashboard_path, class: "flex justify-start text-secondary" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-9 h-9" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42a.996.996 0 0 0-1.41 0l-6.59 6.59a.996.996 0 0 0 0 1.41l6.59 6.59a.996.996 0 1 0 1.41-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"></path></svg>
+    <% end %>
+    <h1 class="font-linotte text-2xl text-secondary">
+      (Preview)
+    </h1>
+  </div>
+  <%= render(PostHeaderComponent.new(post: @post)) %>
+  <%= render(MarkdownViewerComponent.new(md_content: @post.content)) %>
+</div>

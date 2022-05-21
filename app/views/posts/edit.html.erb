@@ -1,0 +1,28 @@
+<div class="container flex flex-col gap-6 p-6 mx-auto">
+  <div class="flex justify-between">
+    <%= link_to dashboard_path, class: "flex justify-start text-secondary" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-9 h-9" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42a.996.996 0 0 0-1.41 0l-6.59 6.59a.996.996 0 0 0 0 1.41l6.59 6.59a.996.996 0 1 0 1.41-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"></path></svg>
+    <% end %>
+    <h1 class="font-linotte text-4xl text-center text-secondary">
+      Editing <%= @post.title %>
+    </h1>
+    <%= button_to post_path(@post.slug), class: "flex justify-start text-red-400", method: :delete do %>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-9 h-9" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z"></path></svg>
+    <% end %>
+  </div>
+  <%= form_with class: "flex flex-col items-center gap-3", model: @post do |form| %>
+    <%= form.text_field :title, class: "w-full font-rubik text-xl text-primary bg-secondary rounded", placeholder: "Title" %>
+    <%= form.text_field :slug, class: "w-full font-rubik text-xl text-primary bg-secondary rounded", placeholder: "Slug" %>
+    <%= form.text_field :description, class: "w-full font-rubik text-xl text-primary bg-secondary rounded", placeholder: "Description" %>
+    <%= form.text_area :content, class: "w-full font-inconsolata text-xl text-primary bg-secondary rounded", placeholder: "Content", rows: 27 %>
+    <div class="flex gap-9 items-center font-rubik text-xl text-secondary">
+      <%= form.label :published, class: "flex items-center gap-2" do %>
+        <%= form.check_box :published, class: "w-6 h-6" %> Published
+      <% end %>
+      <%= form.label :pinned, class: "flex items-center gap-2" do %>
+        <%= form.check_box :pinned, class: "w-6 h-6" %> Pinned
+      <% end %>
+    </div>
+    <%= form.submit class: "py-3 font-rubik text-xl text-secondary underline cursor-pointer" %>
+  <% end %>
+</div>
