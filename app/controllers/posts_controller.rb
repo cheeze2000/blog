@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.published
                  .sorted
-                 .select(:id, :title, :slug)
+                 .select(:id, :title, :slug, :content, :pinned)
                  .page(params[:page]).without_count
   end
 
