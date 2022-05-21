@@ -15,7 +15,6 @@
 /log/*
 /tmp/*
 
-
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
@@ -23,3 +22,5 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+.env
