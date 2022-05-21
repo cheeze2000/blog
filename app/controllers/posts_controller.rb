@@ -9,7 +9,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.published.find_by(slug: params[:slug])
+    @post = Post.published
+                .select(:title, :slug, :description, :content)
+                .find_by(slug: params[:slug])
+
     redirect_to root_path unless @post
   end
 
