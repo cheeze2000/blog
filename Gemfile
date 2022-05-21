@@ -23,6 +23,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem "kaminari"
 
+gem "pg"
+
 gem "redcarpet"
 
 gem "view_component"
