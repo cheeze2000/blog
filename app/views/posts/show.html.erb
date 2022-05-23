@@ -3,9 +3,10 @@
     generate_meta_tags(
       title: "#{@post.title} • cheeze2000.net",
       description: @post.description,
-      url: post_url
+      url: post_url(@post.slug)
     )
   %>
+
   <% if @post.content.include? "+hljs" %>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
