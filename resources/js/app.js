@@ -8,6 +8,7 @@ createInertiaApp({
 	title: (title) => title,
 	resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob("./pages/**/*.vue")),
 	setup({ el, app, props, plugin }) {
+		delete el.dataset.page;
 		return createApp({ render: () => h(app, props) })
 			.use(plugin)
 			.mount(el);
