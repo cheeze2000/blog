@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,27 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Homepage');
+    return Inertia::render('Homepage', [
+        'user' => Auth::user(),
+    ]);
+});
+
+Route::prefix('oauth')->group(function () {
+    Route::get('/redirect', function () {
+        return Socialite::driver('github')
+            ->setScopes([])
+            ->redirect();
+    });
+
+    Route::get('/callback', function () {
+        $data = Socialite::driver('github')->user();
+        $user = User::updateOrCreate(
+            ['id' => $data->id],
+            ['username' => $data->nickname, 'avatar' => $data->avatar],
+        );
+
+        Auth::login($user);
+
+        return redirect('/');
+    });
 });
