@@ -7,9 +7,9 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				"primary": "#3b5249",
-				"secondary": "#e0e6d3",
-				"accent": "#f5c964",
+				"primary": "#38433d",
+				"secondary": "#e8ecdf",
+				"accent": "#f1cd5f",
 			},
 			fontFamily: {
 				"inc": ["Inconsolata", "monospace"],

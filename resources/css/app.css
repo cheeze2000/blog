@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 html {
-	@apply font-ssp;
+	@apply font-ssp text-secondary bg-primary;
 }
