@@ -25,6 +25,8 @@ Route::get('/', function () {
 
 Route::prefix('oauth')->group(function () {
     Route::get('/redirect', function () {
+        session(['redirect_url' => url()->previous()]);
+
         return Socialite::driver('github')
             ->setScopes([])
             ->redirect();
@@ -38,7 +40,14 @@ Route::prefix('oauth')->group(function () {
         );
 
         Auth::login($user);
+        $url = session('redirect_url', '/');
 
-        return redirect('/');
+        return redirect($url);
+    });
+
+    Route::get('/logout', function () {
+        Auth::logout();
+
+        return back();
     });
 });
