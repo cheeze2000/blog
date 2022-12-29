@@ -1,5 +1,11 @@
+<script setup>
+import Layout from "~/components/Layout.vue";
+
+defineProps({
+	user: Object,
+});
+</script>
+
 <template>
-	<div class="flex justify-center items-center w-screen h-screen">
-		Work in progress!
-	</div>
+	<Layout :user="user" />
 </template>
