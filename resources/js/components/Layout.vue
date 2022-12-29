@@ -13,7 +13,7 @@ defineProps({
 			<div class="hover:text-accent">
 				<Link href="/">
 					<Icon
-						class="w-7 h-7"
+						class="p-1 w-9 h-9"
 						icon="ic:round-home"
 					/>
 				</Link>
