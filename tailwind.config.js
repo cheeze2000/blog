@@ -15,6 +15,9 @@ module.exports = {
 				"inc": ["Inconsolata", "monospace"],
 				"ssp": ["Source Sans Pro", "sans-serif"],
 			},
+			spacing: {
+				30: "7.5rem",
+			},
 		},
 	},
 };
