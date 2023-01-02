@@ -1,13 +1,23 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 import { Link } from "@inertiajs/inertia-vue3";
-import { onMounted, reactive } from "vue";
+import { useIntersectionObserver } from "@vueuse/core";
+import { reactive, ref } from "vue";
 
 const data = reactive({
 	isLoading: false,
 	offset: 0,
 	posts: [],
 });
+
+const el = ref(null);
+
+useIntersectionObserver(
+	el,
+	entry => {
+		if (entry[0].isIntersecting) fetchPosts();
+	},
+);
 
 async function fetchPosts() {
 	data.isLoading = true;
@@ -18,8 +28,6 @@ async function fetchPosts() {
 	data.offset = payload.offset;
 	data.posts.push(...payload.posts);
 }
-
-onMounted(fetchPosts);
 </script>
 
 <template>
@@ -68,6 +76,7 @@ onMounted(fetchPosts);
 		</Link>
 		<div
 			v-if="data.offset >= 0 && !data.isLoading"
+			ref="el"
 			class="px-4 py-2 mx-auto w-fit text-primary bg-secondary hover:bg-accent rounded cursor-pointer"
 			@click="fetchPosts"
 		>
