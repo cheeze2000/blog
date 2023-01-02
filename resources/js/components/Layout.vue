@@ -16,7 +16,10 @@ const sidebar = ref(false);
 			:user="user"
 			@change="v => sidebar = v"
 		/>
-		<div :class="{ 'opacity-20 blur': sidebar }">
+		<div
+			class="p-3"
+			:class="{ 'opacity-20 blur': sidebar }"
+		>
 			<slot />
 		</div>
 	</div>
