@@ -30,6 +30,7 @@ const sidebar = ref(false);
 			<img
 				class="w-9 h-9"
 				src="/apple-touch-icon.png"
+				alt="pleading face emoji"
 			>
 		</Link>
 	</div>
