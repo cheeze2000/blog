@@ -46,7 +46,7 @@ async function fetchPosts() {
 				>
 			</div>
 			<div class="flex flex-col justify-between w-7/12">
-				<p class="hover:text-accent">
+				<p class="font-inter hover:text-accent tracking-wide">
 					{{ post.title }}
 				</p>
 				<div class="flex justify-between text-sm opacity-60">

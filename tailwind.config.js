@@ -12,6 +12,7 @@ module.exports = {
 				"accent": "#fcca55",
 			},
 			fontFamily: {
+				"inter": ["Inter", "serif"],
 				"inc": ["Inconsolata", "monospace"],
 				"ssp": ["Source Sans Pro", "sans-serif"],
 			},
