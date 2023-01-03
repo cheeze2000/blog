@@ -21,6 +21,8 @@ use Laravel\Socialite\Facades\Socialite;
 Route::get('/', function () {
     return Inertia::render('Homepage', [
         'user' => Auth::user(),
+        'url' => url('/'),
+        'imageUrl' => url('/apple-touch-icon.png'),
     ]);
 });
 

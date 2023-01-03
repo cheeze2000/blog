@@ -6,10 +6,9 @@ import Posts from "~/components/Posts.vue";
 
 defineProps({
 	user: Object,
+	url: String,
+	imageUrl: String,
 });
-
-const url = location.href;
-const imageUrl = new URL("/apple-touch-icon.png", url).href;
 </script>
 
 <template>
