@@ -39,8 +39,12 @@ md.use(MarkdownItUnderline);
 			:content="post.description"
 		>
 		<meta
+			property="og:site_name"
+			content="cheeze2000.net"
+		>
+		<meta
 			property="og:title"
-			:content="`${post.title} • cheeze2000.net`"
+			:content="post.title"
 		>
 		<meta
 			property="og:type"
