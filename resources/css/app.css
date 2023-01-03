@@ -19,15 +19,15 @@ html {
 }
 
 .md h1 {
-	@apply text-4xl border-b border-b-secondary;
-}
-
-.md h2 {
 	@apply text-3xl border-b border-b-secondary;
 }
 
+.md h2 {
+	@apply text-2xl border-b border-b-secondary;
+}
+
 .md h3 {
-	@apply text-2xl;
+	@apply text-xl;
 }
 
 .md p {
