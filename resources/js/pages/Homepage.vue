@@ -1,13 +1,49 @@
 <script setup>
+import { Head } from "@inertiajs/inertia-vue3";
+
 import Layout from "~/components/Layout.vue";
 import Posts from "~/components/Posts.vue";
 
 defineProps({
 	user: Object,
 });
+
+const url = location.href;
+const imageUrl = new URL("/apple-touch-icon.png", url).href;
 </script>
 
 <template>
+	<Head>
+		<title>cheeze2000.net</title>
+		<meta
+			name="description"
+			content="A personal blog where I demystify and share the new things I learned."
+		>
+		<meta
+			name="theme-color"
+			content="#ffb129"
+		>
+		<meta
+			property="og:description"
+			content="A personal blog where I demystify and share the new things I learned."
+		>
+		<meta
+			property="og:title"
+			content="cheeze2000.net"
+		>
+		<meta
+			property="og:type"
+			content="website"
+		>
+		<meta
+			property="og:url"
+			:content="url"
+		>
+		<meta
+			property="og:image"
+			:content="imageUrl"
+		>
+	</Head>
 	<Layout :user="user">
 		<Posts />
 	</Layout>
