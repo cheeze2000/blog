@@ -51,7 +51,7 @@ const sidebar = ref(false);
 			/>
 			<div
 				v-if="user"
-				class="flex flex-col gap-3 mx-auto"
+				class="flex flex-col gap-6 mx-auto"
 			>
 				<div class="flex items-center gap-4">
 					<img
