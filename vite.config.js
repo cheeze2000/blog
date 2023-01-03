@@ -21,7 +21,9 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: {
-			"~": resolve("resources/js"),
+			"~/components": resolve("resources/js/components"),
+			"~/css": resolve("resources/css"),
+			"~/img": resolve("resources/img"),
 		},
 	},
 	ssr: {
