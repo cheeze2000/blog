@@ -20,13 +20,16 @@ useIntersectionObserver(
 );
 
 async function fetchPosts() {
-	data.isLoading = true;
-	const res = await fetch(`/api/posts?offset=${data.offset}`);
-	data.isLoading = false;
+	if (data.isLoading) return;
 
+	data.isLoading = true;
+
+	const res = await fetch(`/api/posts?offset=${data.offset}`);
 	const payload = await res.json();
 	data.offset = payload.offset;
 	data.posts.push(...payload.posts);
+
+	data.isLoading = false;
 }
 </script>
 
