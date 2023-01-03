@@ -16,7 +16,7 @@ defineProps({
 		<title>cheeze2000.net</title>
 		<meta
 			name="description"
-			content="A personal blog where I demystify and share the new things I learned."
+			content="A personal blog where I demystify and share the new things I learned"
 		>
 		<meta
 			name="theme-color"
@@ -24,7 +24,7 @@ defineProps({
 		>
 		<meta
 			property="og:description"
-			content="A personal blog where I demystify and share the new things I learned."
+			content="A personal blog where I demystify and share the new things I learned"
 		>
 		<meta
 			property="og:title"
