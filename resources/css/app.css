@@ -5,3 +5,59 @@
 html {
 	@apply font-ssp text-secondary bg-primary;
 }
+
+.md > *:first-child {
+	@apply mt-0;
+}
+
+.md > *:last-child {
+	@apply mb-0;
+}
+
+.md h1, .md h2, .md h3 {
+	@apply pb-1 mt-6 mb-4 font-inter tracking-wide;
+}
+
+.md h1 {
+	@apply text-4xl border-b border-b-secondary;
+}
+
+.md h2 {
+	@apply text-3xl border-b border-b-secondary;
+}
+
+.md h3 {
+	@apply text-2xl;
+}
+
+.md p {
+	@apply mb-4 text-xl leading-normal;
+}
+
+.md p code {
+	@apply px-1.5 py-0.5 font-inc text-lg bg-secondary/10;
+}
+
+.md u {
+	@apply underline underline-offset-2;
+}
+
+.md a {
+	@apply hover:text-accent underline underline-offset-2;
+}
+
+.md pre {
+	@apply overflow-x-auto px-4 py-3 mb-6 bg-secondary/5 rounded;
+}
+
+.md pre code {
+	@apply font-inc text-xl;
+}
+
+.md img {
+	@apply mx-auto mb-3;
+}
+
+.md img + u {
+	@apply block mx-auto mb-6 text-center no-underline;
+}
