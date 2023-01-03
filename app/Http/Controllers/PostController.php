@@ -36,7 +36,11 @@ class PostController extends Controller
         ', [$id]);
 
         if (empty($posts)) {
-            return redirect('/');
+            return Inertia::render('404', [
+                'user' => Auth::user(),
+                'url' => url()->current(),
+                'imageUrl' => url('/apple-touch-icon.png'),
+            ]);
         } else {
             return Inertia::render('Post', [
                 'user' => Auth::user(),

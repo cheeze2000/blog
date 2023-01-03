@@ -56,3 +56,11 @@ Route::prefix('oauth')->group(function () {
         return back();
     });
 });
+
+Route::fallback(function () {
+    return Inertia::render('404', [
+        'user' => Auth::user(),
+        'url' => url()->current(),
+        'imageUrl' => url('/apple-touch-icon.png'),
+    ]);
+});
