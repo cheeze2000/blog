@@ -17,18 +17,49 @@ class PostFactory extends Factory
      */
     public function definition()
     {
-        $title = ucwords(fake()->words(6, true));
-        $content = fake()->sentences(9, true);
+        $title = "Happy New Year 2023";
+        $content = "
+# Happy New Year 2023
+One of my New Year's resolutions in 2023 is to maintain a blog. This post will be the one that starts it all.
+
+I don't know what else to write for an introductory post, so I'll be testing stuff to see if my markdown rendering works.
+
+## Crude Testing Ahead
+This is **bolded**.
+
+This is *italicised*.
+
+This is [a link](#).
+
+This is `inline code`.
+
+This is _underlined_.
+
+This is a placeholder image along with a caption.
+
+![Placeholder Image](https://via.placeholder.com/150)
+_**Figure 1:** A placeholder image_
+
+```php
+echo 'This is a code block.';
+```
+
+# Almost forgot about the headings
+## and this one
+### and this one
+
+Please look forward to more exciting posts in the future!
+        ";
 
         return [
             'title' => $title,
-            'description' => fake()->sentence(),
+            'description' => 'An introductory post to start 2023 right',
             'slug' => Str::of($title)->slug(),
-            'thumbnail' => fake()->imageUrl(),
-            'content' => fake()->sentences(9, true),
+            'thumbnail' => 'https://i.postimg.cc/J4wZ1V9y/y2023.webp',
+            'content' => $content,
             'read_time' => ceil(strlen($content) / 500),
-            'published' => fake()->boolean(),
-            'pinned' => fake()->boolean(),
+            'published' => true,
+            'pinned' => true,
         ];
     }
 }
