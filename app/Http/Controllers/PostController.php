@@ -41,6 +41,7 @@ class PostController extends Controller
             return Inertia::render('Post', [
                 'user' => Auth::user(),
                 'post' => $posts[0],
+                'url' => url()->current(),
             ]);
         }
     }
