@@ -11,7 +11,7 @@ const sidebar = ref(false);
 </script>
 
 <template>
-	<div class="container mx-auto max-w-[450px] min-h-screen">
+	<div class="container mx-auto max-w-screen-lg min-h-screen">
 		<Header
 			:user="user"
 			@change="v => sidebar = v"
