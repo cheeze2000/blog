@@ -1,6 +1,7 @@
 <script setup>
 import { Head } from "@inertiajs/inertia-vue3";
 
+import About from "~/components/About.vue";
 import Layout from "~/components/Layout.vue";
 import Posts from "~/components/Posts.vue";
 
@@ -44,6 +45,9 @@ defineProps({
 		>
 	</Head>
 	<Layout :user="user">
-		<Posts />
+		<div class="flex">
+			<Posts class="md:w-2/3" />
+			<About class="hidden md:flex w-1/3 px-6 py-12" />
+		</div>
 	</Layout>
 </template>
