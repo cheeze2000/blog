@@ -57,7 +57,7 @@ defineProps({
 				</p>
 			</div>
 			<Link
-				class="px-5 py-3 w-fit font-inter text-xl font-bold text-primary bg-secondary hover:bg-accent rounded"
+				class="px-4 py-3 w-fit font-inter font-bold text-primary bg-secondary hover:bg-accent rounded"
 				href="/"
 			>
 				Go to Home
