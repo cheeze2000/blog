@@ -6,6 +6,7 @@ import Markdown from "~/components/Markdown.vue";
 
 const props = defineProps({
 	user: Object,
+	url: String,
 	id: Number,
 });
 
@@ -16,7 +17,8 @@ const post = ref({
 });
 
 async function create() {
-	await fetch("/api/dashboard/posts", {
+	const url = new URL("/api/dashboard/posts", props.url);
+	await fetch(url, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -28,7 +30,8 @@ async function create() {
 }
 
 async function edit() {
-	await fetch("/api/dashboard/posts", {
+	const url = new URL("/api/dashboard/posts", props.url);
+	await fetch(url, {
 		method: "PATCH",
 		headers: {
 			"Content-Type": "application/json",
@@ -46,7 +49,8 @@ function submit() {
 }
 
 async function getPost() {
-	const res = await fetch(`/api/dashboard/posts/${props.id}`);
+	const url = new URL(`/api/dashboard/posts/${props.id}`, props.url);
+	const res = await fetch(url);
 	post.value = await res.json();
 }
 

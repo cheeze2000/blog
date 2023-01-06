@@ -61,12 +61,14 @@ Route::middleware('auth.admin')->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard', [
             'user' => Auth::user(),
+            'url' => url('/'),
         ]);
     });
 
     Route::get('/dashboard/create', function () {
         return Inertia::render('Editor', [
             'user' => Auth::user(),
+            'url' => url('/'),
             'id' => null,
         ]);
     });
@@ -74,6 +76,7 @@ Route::middleware('auth.admin')->group(function () {
     Route::get('/dashboard/edit/{id}', function ($id) {
         return Inertia::render('Editor', [
             'user' => Auth::user(),
+            'url' => url('/'),
             'id' => intval($id),
         ]);
     });

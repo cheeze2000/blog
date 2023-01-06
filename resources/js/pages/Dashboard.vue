@@ -5,8 +5,9 @@ import { ref } from "vue";
 
 import Layout from "~/components/Layout.vue";
 
-defineProps({
+const props = defineProps({
 	user: Object,
+	url: String,
 });
 
 const posts = ref([]);
@@ -16,7 +17,8 @@ function url(id) {
 }
 
 async function getPosts() {
-	const res = await fetch("/api/dashboard/posts");
+	const url = new URL("/api/dashboard/posts", props.url);
+	const res = await fetch(url);
 	const data = await res.json();
 	posts.value.push(...data);
 }
@@ -24,7 +26,8 @@ async function getPosts() {
 async function del(id) {
 	if (!confirm("Are you sure you want to delete this post?")) return;
 
-	await fetch("/api/dashboard/posts", {
+	const url = new URL("/api/dashboard/posts", props.url);
+	await fetch(url, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",
