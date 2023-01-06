@@ -55,7 +55,7 @@ Please look forward to more exciting posts in the future!
             'title' => $title,
             'description' => 'An introductory post to start 2023 right',
             'slug' => Str::of($title)->slug(),
-            'thumbnail' => 'https://i.postimg.cc/J4wZ1V9y/y2023.webp',
+            'thumbnail' => 'https://i.postimg.cc/6qb1grnX/y2023.webp',
             'content' => $content,
             'read_time' => ceil(strlen($content) / 500),
             'published' => true,
