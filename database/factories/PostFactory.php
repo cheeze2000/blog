@@ -17,7 +17,7 @@ class PostFactory extends Factory
      */
     public function definition()
     {
-        $title = "Happy New Year 2023";
+        $title = 'Happy New Year 2023';
         $content = "
 # Happy New Year 2023
 One of my New Year's resolutions in 2023 is to maintain a blog. This post will be the one that starts it all.
