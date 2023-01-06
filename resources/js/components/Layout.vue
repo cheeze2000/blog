@@ -17,7 +17,7 @@ const sidebar = ref(false);
 			@change="v => sidebar = v"
 		/>
 		<div
-			class="p-3"
+			class="p-3 pt-0"
 			:class="{ 'opacity-20 blur': sidebar }"
 		>
 			<slot />

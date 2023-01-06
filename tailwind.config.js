@@ -20,5 +20,10 @@ module.exports = {
 				30: "7.5rem",
 			},
 		},
+		screens: {
+			"sm": "512px",
+			"md": "768px",
+			"lg": "1024px",
+		},
 	},
 };
