@@ -57,6 +57,28 @@ Route::prefix('oauth')->group(function () {
     });
 });
 
+Route::middleware('auth.admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard', [
+            'user' => Auth::user(),
+        ]);
+    });
+
+    Route::get('/dashboard/create', function () {
+        return Inertia::render('Editor', [
+            'user' => Auth::user(),
+            'id' => null,
+        ]);
+    });
+
+    Route::get('/dashboard/edit/{id}', function ($id) {
+        return Inertia::render('Editor', [
+            'user' => Auth::user(),
+            'id' => intval($id),
+        ]);
+    });
+});
+
 Route::fallback(function () {
     return Inertia::render('404', [
         'user' => Auth::user(),
