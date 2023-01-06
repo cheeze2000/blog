@@ -48,7 +48,7 @@ const sidebar = ref(false);
 					v-if="user"
 					class="flex gap-9 mx-auto"
 				>
-					<div class="flex items-center gap-4">
+					<div class="flex items-center gap-2">
 						<img
 							class="w-5 h-5 rounded-full"
 							:src="user.avatar"
