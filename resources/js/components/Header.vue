@@ -54,9 +54,7 @@ const sidebar = ref(false);
 							:src="user.avatar"
 							alt="github user avatar"
 						>
-						<p>
-							{{ user.username }}
-						</p>
+						{{ user.username }}
 					</div>
 					<NavbarItem
 						href="/oauth/logout"
@@ -110,9 +108,7 @@ const sidebar = ref(false);
 						:src="user.avatar"
 						alt="github user avatar"
 					>
-					<p>
-						{{ user.username }}
-					</p>
+					{{ user.username }}
 				</div>
 				<SidebarItem
 					href="/oauth/logout"

@@ -18,8 +18,6 @@ defineProps({
 			class="w-5 h-5"
 			:icon="icon"
 		/>
-		<p>
-			{{ name }}
-		</p>
+		{{ name }}
 	</Link>
 </template>
