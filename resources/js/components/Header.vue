@@ -1,6 +1,5 @@
 <script setup>
 import { Icon } from "@iconify/vue";
-import { Link } from "@inertiajs/inertia-vue3";
 import { ref } from "vue";
 
 import NavbarItem from "~/components/NavbarItem.vue";
@@ -19,13 +18,13 @@ const sidebar = ref(false);
 
 <template>
 	<div class="sticky flex justify-between top-0 z-40 p-3 text-secondary bg-primary">
-		<Link href="/">
+		<a href="/">
 			<img
 				class="w-9 h-9"
 				src="/apple-touch-icon.png"
 				alt="pleading face emoji"
 			>
-		</Link>
+		</a>
 		<div class="flex items-center">
 			<Icon
 				class="md:hidden w-9 h-9 hover:text-accent cursor-pointer transition-all"

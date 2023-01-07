@@ -1,6 +1,5 @@
 <script setup>
 import { Icon } from "@iconify/vue";
-import { Link } from "@inertiajs/inertia-vue3";
 
 defineProps({
 	href: String,
@@ -10,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-	<Link
+	<a
 		class="flex items-center gap-2 hover:text-accent"
 		:href="href"
 	>
@@ -19,5 +18,5 @@ defineProps({
 			:icon="icon"
 		/>
 		{{ name }}
-	</Link>
+	</a>
 </template>

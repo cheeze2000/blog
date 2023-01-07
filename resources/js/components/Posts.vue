@@ -1,6 +1,5 @@
 <script setup>
 import { Icon } from "@iconify/vue";
-import { Link } from "@inertiajs/inertia-vue3";
 import { useIntersectionObserver } from "@vueuse/core";
 import { reactive, ref } from "vue";
 
@@ -35,7 +34,7 @@ async function fetchPosts() {
 
 <template>
 	<div class="flex flex-col gap-6">
-		<Link
+		<a
 			v-for="post in data.posts"
 			:key="post.id"
 			class="flex flex-col sm:flex-row gap-3"
@@ -73,7 +72,7 @@ async function fetchPosts() {
 					{{ post.description }}
 				</p>
 			</div>
-		</Link>
+		</a>
 		<div
 			v-if="data.offset >= 0 && !data.isLoading"
 			ref="el"

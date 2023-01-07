@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link } from "@inertiajs/inertia-vue3";
+import { Head } from "@inertiajs/inertia-vue3";
 
 import Layout from "~/components/Layout.vue";
 
@@ -56,12 +56,12 @@ defineProps({
 					The page you're looking for doesn't exist!
 				</p>
 			</div>
-			<Link
+			<a
 				class="px-4 py-3 w-fit font-inter font-bold text-primary bg-secondary hover:bg-accent rounded"
 				href="/"
 			>
 				Go to Home
-			</Link>
+			</a>
 		</div>
 	</Layout>
 </template>

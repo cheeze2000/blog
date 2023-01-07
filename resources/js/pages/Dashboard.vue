@@ -1,8 +1,6 @@
 <script setup>
 import { Icon } from "@iconify/vue";
-import { Inertia } from "@inertiajs/inertia";
-import { Link, useForm } from "@inertiajs/inertia-vue3";
-import { ref } from "vue";
+import { useForm } from "@inertiajs/inertia-vue3";
 
 import Layout from "~/components/Layout.vue";
 
@@ -26,12 +24,12 @@ async function del(id) {
 <template>
 	<Layout :user="user">
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-			<Link
+			<a
 				class="col-span-full p-2 w-fit h-fit text-xl hover:text-primary hover:bg-accent rounded border border-secondary/20"
 				href="/dashboard/create"
 			>
 				New Post
-			</Link>
+			</a>
 			<div
 				v-for="post in posts"
 				:key="post.id"
@@ -47,12 +45,12 @@ async function del(id) {
 				</div>
 				<div class="flex justify-between">
 					<div class="flex gap-2">
-						<Link
+						<a
 							class="underline underline-offset-2"
 							:href="url(post.id)"
 						>
 							Edit
-						</Link>
+						</a>
 						<p
 							class="underline underline-offset-2 cursor-pointer"
 							@click="del(post.id)"
