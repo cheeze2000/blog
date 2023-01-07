@@ -46,7 +46,7 @@ defineProps({
 	</Head>
 	<Layout :user="user">
 		<div class="flex">
-			<Posts class="md:w-2/3" />
+			<Posts class="w-full md:w-2/3" />
 			<About class="hidden md:flex w-1/3 px-6 py-12" />
 		</div>
 	</Layout>

@@ -1,44 +1,26 @@
 <script setup>
 import { Icon } from "@iconify/vue";
-import { Link } from "@inertiajs/inertia-vue3";
+import { Inertia } from "@inertiajs/inertia";
+import { Link, useForm } from "@inertiajs/inertia-vue3";
 import { ref } from "vue";
 
 import Layout from "~/components/Layout.vue";
 
 const props = defineProps({
 	user: Object,
-	url: String,
+	posts: Array,
 });
-
-const posts = ref([]);
 
 function url(id) {
 	return `/dashboard/edit/${id}`;
 }
 
-async function getPosts() {
-	const url = new URL("/api/dashboard/posts", props.url);
-	const res = await fetch(url);
-	const data = await res.json();
-	posts.value.push(...data);
-}
-
 async function del(id) {
 	if (!confirm("Are you sure you want to delete this post?")) return;
 
-	const url = new URL("/api/dashboard/posts", props.url);
-	await fetch(url, {
-		method: "DELETE",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({ id }),
-	});
-
-	posts.value = posts.value.filter(p => p.id != id);
+	const form = useForm({ id });
+	form.delete("/dashboard/posts");
 }
-
-getPosts();
 </script>
 
 <template>

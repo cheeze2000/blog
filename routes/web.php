@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -58,27 +59,22 @@ Route::prefix('oauth')->group(function () {
 });
 
 Route::middleware('auth.admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard', [
-            'user' => Auth::user(),
-            'url' => url('/'),
-        ]);
-    });
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/', [DashboardController::class, 'dashboard']);
+        Route::post('/posts', [DashboardController::class, 'createPost']);
+        Route::patch('/posts', [DashboardController::class, 'editPost']);
+        Route::delete('/posts', [DashboardController::class, 'deletePost']);
 
-    Route::get('/dashboard/create', function () {
-        return Inertia::render('Editor', [
-            'user' => Auth::user(),
-            'url' => url('/'),
-            'id' => null,
-        ]);
-    });
+        Route::get('/create', [DashboardController::class, 'createPostPage']);
+        Route::get('/edit/{id}', [DashboardController::class, 'editPostPage']);
 
-    Route::get('/dashboard/edit/{id}', function ($id) {
-        return Inertia::render('Editor', [
-            'user' => Auth::user(),
-            'url' => url('/'),
-            'id' => intval($id),
-        ]);
+        Route::get('/create', function () {
+            return Inertia::render('Editor', [
+                'user' => Auth::user(),
+                'url' => url('/'),
+                'id' => null,
+            ]);
+        });
     });
 });
 

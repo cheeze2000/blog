@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Inertia\Inertia;
 
 class DashboardController extends Controller
 {
-    public function getAll()
+    public function dashboard()
     {
         $posts = DB::select('
             select id, title, description, published, pinned
@@ -16,21 +18,38 @@ class DashboardController extends Controller
             order by pinned desc, created_at desc
         ');
 
-        return $posts;
+        return Inertia::render('Dashboard', [
+            'user' => Auth::user(),
+            'posts' => $posts,
+        ]);
     }
 
-    public function getOne()
+    public function createPostPage()
+    {
+        return Inertia::render('Editor', [
+            'user' => Auth::user(),
+            'post' => ['id' => 0],
+            'id' => 0,
+        ]);
+    }
+
+    public function editPostPage($id)
     {
         $posts = DB::select('
             select id, title, description, slug, thumbnail, content, published, pinned
             from posts
+            where id = ?
             order by pinned desc, created_at desc
-        ');
+        ', [$id]);
 
-        return $posts[0];
+        return Inertia::render('Editor', [
+            'user' => Auth::user(),
+            'post' => $posts[0],
+            'id' => intval($id),
+        ]);
     }
 
-    public function create(Request $request)
+    public function createPost(Request $request)
     {
         $slug = $request->slug == '' ? Str::slug($request->title) : $request->slug;
         $read_time = ceil(strlen($request->content) / 500);
@@ -50,7 +69,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function edit(Request $request)
+    public function editPost(Request $request)
     {
         $slug = $request->slug == '' ? Str::slug($request->title) : $request->slug;
         $read_time = ceil(strlen($request->content) / 500);
@@ -72,7 +91,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function delete(Request $request)
+    public function deletePost(Request $request)
     {
         DB::delete('
             delete from posts

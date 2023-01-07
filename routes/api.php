@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,13 +15,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/posts', [PostController::class, 'get']);
-
-Route::middleware('auth.admin')->group(function () {
-    Route::prefix('dashboard')->group(function () {
-        Route::get('/posts', [DashboardController::class, 'getAll']);
-        Route::get('/posts/{id}', [DashboardController::class, 'getOne']);
-        Route::post('/posts', [DashboardController::class, 'create']);
-        Route::patch('/posts', [DashboardController::class, 'edit']);
-        Route::delete('/posts', [DashboardController::class, 'delete']);
-    });
-});
