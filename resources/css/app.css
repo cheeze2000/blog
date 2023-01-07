@@ -6,6 +6,10 @@ html {
 	@apply font-ssp text-secondary bg-primary;
 }
 
+.katex {
+	@apply !text-[1.1em];
+}
+
 .md > *:first-child {
 	@apply mt-0;
 }
