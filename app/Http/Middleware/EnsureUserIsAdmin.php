@@ -21,7 +21,7 @@ class EnsureUserIsAdmin
         $user = Auth::user();
         if (is_null($user) || $user->username != 'cheeze2000') {
             return Inertia::render('404', [
-                'user' => null,
+                'user' => $user,
                 'url' => url()->current(),
                 'imageUrl' => url('/apple-touch-icon.png'),
             ]);
