@@ -27,6 +27,14 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/about', function () {
+    return Inertia::render('About', [
+        'user' => Auth::user(),
+        'url' => url('/about'),
+        'imageUrl' => url('/apple-touch-icon.png'),
+    ]);
+});
+
 Route::get('/posts/{id}/{slug?}', [PostController::class, 'view']);
 
 Route::prefix('oauth')->group(function () {
