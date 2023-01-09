@@ -1,5 +1,6 @@
 <script setup>
 import { Head } from "@inertiajs/inertia-vue3";
+import { Icon } from "@iconify/vue";
 
 import Layout from "~/components/Layout.vue";
 import Markdown from "~/components/Markdown.vue";
@@ -48,6 +49,23 @@ defineProps({
 		>
 	</Head>
 	<Layout :user="user">
-		<Markdown :content="post.content" />
+		<div class="flex flex-col gap-18 py-12">
+			<div class="flex flex-col gap-3 items-center text-center">
+				<p class="font-inter text-3xl tracking-wide">
+					{{ post.title }}
+				</p>
+				<p class="text-xl">
+					{{ post.description }}
+				</p>
+				<p class="flex gap-2 items-center opacity-60">
+					<Icon
+						class="w-5 h-5"
+						icon="material-symbols:timer-rounded"
+					/>
+					{{ post.read_time }} min. read
+				</p>
+			</div>
+			<Markdown :content="post.content" />
+		</div>
 	</Layout>
 </template>

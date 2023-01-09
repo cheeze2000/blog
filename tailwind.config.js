@@ -17,6 +17,7 @@ module.exports = {
 				"ssp": ["Source Sans Pro", "sans-serif"],
 			},
 			spacing: {
+				18: "4.5rem",
 				30: "7.5rem",
 			},
 		},
