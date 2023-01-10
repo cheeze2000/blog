@@ -1,5 +1,6 @@
 <script setup>
 import { Head } from "@inertiajs/inertia-vue3";
+import { Icon } from "@iconify/vue";
 
 import Layout from "~/components/Layout.vue";
 
@@ -58,6 +59,27 @@ defineProps({
 				Writing and teaching (an imaginary audience) also help enhance my understanding.
 				Doing this also helps greatly with knowledge retention, I heard.
 				I hope you had as much fun reading my blog posts as I did writing them.
+			</p>
+			<p class="text-xl">
+				Follow me on
+				<a
+					class="hover:text-accent underline underline-offset-2"
+					href="https://github.com/cheeze2000"
+					target="_blank"
+				>
+					{{ "GitHub" }}
+				</a>
+				where you can find all my open-source projects like this blog you're reading now.
+				I am also a regular
+				<a
+					class="hover:text-accent underline underline-offset-2"
+					href="https://discord.com/users/402027995021443073"
+					target="_blank"
+				>
+					{{ "Discord" }}
+				</a>
+				user, feel free to add me for a chat!
+				If you find me on other platforms, it is probably not me. Well, maybe it is, but just pretend it is not me.
 			</p>
 			<p class="text-xl">
 				Enjoy your stay!
