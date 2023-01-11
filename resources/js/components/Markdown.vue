@@ -5,8 +5,10 @@ import "prism-themes/themes/prism-one-dark.css";
 import { onMounted } from "vue";
 import MarkdownIt from "markdown-it";
 import MarkdownItUnderline from "markdown-it-underline";
-import Prism from "prismjs";
 import renderMathInElement from "katex/dist/contrib/auto-render.js";
+import Prism from "prismjs";
+import "prismjs/components/prism-markup-templating";
+import "prismjs/components/prism-php";
 
 defineProps({
 	content: String,
