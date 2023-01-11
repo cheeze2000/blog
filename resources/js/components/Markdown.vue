@@ -4,16 +4,26 @@ import "prism-themes/themes/prism-one-dark.css";
 
 import { onMounted } from "vue";
 import MarkdownIt from "markdown-it";
-import MarkdownItPrism from "markdown-it-prism";
 import MarkdownItUnderline from "markdown-it-underline";
+import Prism from "prismjs";
 import renderMathInElement from "katex/dist/contrib/auto-render.js";
 
 defineProps({
 	content: String,
 });
 
-const md = new MarkdownIt()
-	.use(MarkdownItPrism)
+const md = new MarkdownIt({
+	highlight(str, lang) {
+		let hl;
+		try {
+			hl = Prism.highlight(str, Prism.languages[lang]);
+		} catch (err) {
+			hl = md.utils.escapeHtml(str);
+		}
+
+		return `<pre class="language-${lang}"><code class="language-${lang}">${hl}</code></pre>`;
+	},
+})
 	.use(MarkdownItUnderline);
 
 onMounted(() => renderMathInElement(document.body, {
