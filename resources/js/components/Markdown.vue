@@ -1,10 +1,10 @@
 <script setup>
-import "highlight.js/styles/atom-one-dark.css";
 import "katex/dist/katex.min.css";
+import "prism-themes/themes/prism-one-dark.css";
 
 import { onMounted } from "vue";
-import Highlight from "highlight.js";
 import MarkdownIt from "markdown-it";
+import MarkdownItPrism from "markdown-it-prism";
 import MarkdownItUnderline from "markdown-it-underline";
 import renderMathInElement from "katex/dist/contrib/auto-render.js";
 
@@ -12,13 +12,9 @@ defineProps({
 	content: String,
 });
 
-const md = new MarkdownIt({
-	highlight: function (str, language) {
-		return Highlight.highlight(str, { language }).value;
-	},
-});
-
-md.use(MarkdownItUnderline);
+const md = new MarkdownIt()
+	.use(MarkdownItPrism)
+	.use(MarkdownItUnderline);
 
 onMounted(() => renderMathInElement(document.body, {
 	delimiters: [

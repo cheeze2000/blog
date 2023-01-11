@@ -51,11 +51,15 @@ html {
 }
 
 .md pre {
-	@apply overflow-x-auto px-4 py-3 mb-6 bg-secondary/5 rounded;
+	@apply overflow-x-auto px-4 py-3 mb-6 rounded;
 }
 
 .md pre code {
-	@apply font-inc text-xl;
+	@apply font-inc text-[21px];
+}
+
+.md pre code .token.comment {
+	@apply not-italic;
 }
 
 .md img {
