@@ -35,6 +35,22 @@ class PostController extends Controller
             where id = ? and published = true
         ', [$id]);
 
+        return $this->render($posts);
+    }
+
+    public function preview($slug)
+    {
+        $posts = DB::select('
+            select id, title, description, thumbnail, content, read_time
+            from posts
+            where slug = ?
+        ', [$slug]);
+
+        return $this->render($posts);
+    }
+
+    private function render($posts)
+    {
         if (empty($posts)) {
             return Inertia::render('404', [
                 'user' => Auth::user(),

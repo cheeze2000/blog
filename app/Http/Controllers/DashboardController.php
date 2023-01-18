@@ -42,10 +42,14 @@ class DashboardController extends Controller
             order by pinned desc, created_at desc
         ', [$id]);
 
+        $post = $posts[0];
+        $slug = $post->slug;
+
         return Inertia::render('Editor', [
             'user' => Auth::user(),
-            'post' => $posts[0],
+            'post' => $post,
             'id' => intval($id),
+            'url' => url("/previews/$slug"),
         ]);
     }
 

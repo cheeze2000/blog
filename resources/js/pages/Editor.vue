@@ -2,12 +2,12 @@
 import { useForm } from "@inertiajs/inertia-vue3";
 
 import Layout from "~/components/Layout.vue";
-import Markdown from "~/components/Markdown.vue";
 
 const props = defineProps({
 	user: Object,
 	post: Object,
 	id: Number,
+	url: String,
 });
 
 const form = useForm({
@@ -89,13 +89,16 @@ function submit() {
 				>
 				Pinned
 			</label>
+			<a
+				class="p-2 text-xl text-center hover:text-primary hover:bg-accent rounded border border-secondary/20"
+				:href="url"
+				target="_blank"
+			>
+				Preview
+			</a>
 			<button class="p-2 text-xl hover:text-primary hover:bg-accent rounded border border-secondary/20">
 				Submit
 			</button>
-			<p class="my-9 text-3xl text-center">
-				Preview
-			</p>
-			<Markdown :content="form.content" />
 		</form>
 	</Layout>
 </template>

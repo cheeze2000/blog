@@ -36,6 +36,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts/{id}/{slug?}', [PostController::class, 'view']);
+Route::get('/previews/{secret}', [PostController::class, 'preview']);
 
 Route::prefix('oauth')->group(function () {
     Route::get('/redirect', function () {
