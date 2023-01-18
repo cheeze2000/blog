@@ -46,7 +46,7 @@ async function fetchPosts() {
 					:src="post.thumbnail"
 					alt="thumbnail image"
 				>
-				<div class="absolute top-3 left-3 flex items-center gap-1 px-2 py-1 bg-secondary/10 backdrop-blur rounded">
+				<div class="absolute top-3 left-3 flex items-center gap-1 px-2 py-1 bg-primary bg-opacity-[0.45] backdrop-blur rounded">
 					<Icon
 						class="w-4 h-4"
 						icon="material-symbols:timer-rounded"
@@ -55,7 +55,7 @@ async function fetchPosts() {
 				</div>
 				<div
 					v-if="post.pinned"
-					class="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 bg-secondary/10 backdrop-blur rounded"
+					class="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 bg-primary bg-opacity-[0.45] backdrop-blur rounded"
 				>
 					<Icon
 						class="w-4 h-4"
