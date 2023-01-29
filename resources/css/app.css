@@ -39,7 +39,7 @@ html {
 }
 
 .md p code {
-	@apply px-1.5 py-0.5 font-inc text-lg bg-secondary/10;
+	@apply px-1.5 py-0.5 font-inc text-lg bg-[#363b45] rounded
 }
 
 .md u {
