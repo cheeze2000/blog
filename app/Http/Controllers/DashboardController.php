@@ -57,6 +57,7 @@ class DashboardController extends Controller
     {
         $slug = $request->slug == '' ? Str::slug($request->title) : $request->slug;
         $read_time = ceil(strlen($request->content) / 500);
+        $read_time = ceil($read_time / 3.0) * 3;
 
         DB::insert('
             insert into posts (title, description, slug, thumbnail, content, read_time, published, pinned)
@@ -77,6 +78,7 @@ class DashboardController extends Controller
     {
         $slug = $request->slug == '' ? Str::slug($request->title) : $request->slug;
         $read_time = ceil(strlen($request->content) / 500);
+        $read_time = ceil($read_time / 3.0) * 3;
 
         DB::update('
             update posts

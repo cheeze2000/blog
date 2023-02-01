@@ -11,10 +11,9 @@ class PostController extends Controller
 {
     public function get(Request $request)
     {
-        $slash = '\'/\'';
         $offset = $request->offset;
         $posts = DB::select("
-            select id, title, description, pinned, concat('posts', $slash, id, $slash, slug) as url, thumbnail, read_time
+            select id, title, description, pinned, concat('posts/', id, '/', slug) as url, thumbnail, read_time
             from posts
             where published = true
             order by pinned desc, created_at desc
