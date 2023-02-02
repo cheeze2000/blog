@@ -27,6 +27,7 @@ const md = new MarkdownIt({
 
 		return `<pre class="language-${lang}"><code class="language-${lang}">${hl}</code></pre>`;
 	},
+	html: true,
 })
 	.use(MarkdownItUnderline);
 
