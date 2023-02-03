@@ -63,7 +63,7 @@ html {
 }
 
 .md img {
-	@apply mx-auto mb-3;
+	@apply mx-auto mt-6 mb-3;
 }
 
 .md img + u {
