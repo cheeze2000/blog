@@ -62,10 +62,10 @@ html {
 	@apply not-italic;
 }
 
-.md img {
-	@apply mx-auto mt-6 mb-3;
+.md blockquote p {
+	@apply flex flex-col sm:flex-row items-center sm:justify-center gap-6 my-6;
 }
 
-.md img + u {
-	@apply block mx-auto mb-6 text-center no-underline;
+.md blockquote u {
+	@apply block mx-auto text-center no-underline;
 }
