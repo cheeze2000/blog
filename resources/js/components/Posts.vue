@@ -36,7 +36,7 @@ async function fetchPosts() {
 	<div class="flex flex-col gap-6">
 		<a
 			v-for="post in data.posts"
-			:key="post.id"
+			:key="post.secondary_id"
 			class="flex flex-col sm:flex-row gap-3"
 			:href="post.url"
 		>

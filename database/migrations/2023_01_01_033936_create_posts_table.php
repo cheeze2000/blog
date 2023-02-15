@@ -17,13 +17,14 @@ return new class extends Migration
             $table->id();
             $table->text('title');
             $table->text('description');
+            $table->integer('secondary_id');
             $table->text('slug');
             $table->text('thumbnail');
             $table->text('content');
             $table->integer('read_time');
             $table->boolean('published');
             $table->boolean('pinned');
-            $table->timestamps();
+            $table->date('published_on');
         });
     }
 

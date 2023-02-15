@@ -13,10 +13,10 @@ class PostController extends Controller
     {
         $offset = $request->offset;
         $posts = DB::select("
-            select id, title, description, pinned, concat('posts/', id, '/', slug) as url, thumbnail, read_time
+            select secondary_id, title, description, pinned, concat('posts/', secondary_id, '/', slug) as url, thumbnail, read_time
             from posts
             where published = true
-            order by pinned desc, id desc
+            order by pinned desc, published_on desc
             limit 7 offset ?
         ", [$offset]);
 
@@ -29,9 +29,9 @@ class PostController extends Controller
     public function view($id)
     {
         $posts = DB::select('
-            select id, title, description, thumbnail, content, read_time
+            select secondary_id, title, description, thumbnail, content, read_time
             from posts
-            where id = ? and published = true
+            where secondary_id = ? and published = true
         ', [$id]);
 
         return $this->render($posts);
@@ -40,7 +40,7 @@ class PostController extends Controller
     public function preview($slug)
     {
         $posts = DB::select('
-            select id, title, description, thumbnail, content, read_time
+            select secondary_id, title, description, thumbnail, content, read_time
             from posts
             where slug = ?
         ', [$slug]);

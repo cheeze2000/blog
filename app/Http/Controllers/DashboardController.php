@@ -15,7 +15,7 @@ class DashboardController extends Controller
         $posts = DB::select('
             select id, title, description, published, pinned
             from posts
-            order by pinned desc, id desc
+            order by pinned desc, published_on desc
         ');
 
         return Inertia::render('Dashboard', [
@@ -36,7 +36,7 @@ class DashboardController extends Controller
     public function editPostPage($id)
     {
         $posts = DB::select('
-            select id, title, description, slug, thumbnail, content, published, pinned
+            select id, secondary_id, title, description, slug, thumbnail, content, published_on, published, pinned
             from posts
             where id = ?
         ', [$id]);
@@ -59,15 +59,17 @@ class DashboardController extends Controller
         $read_time = ceil($read_time / 3.0) * 3;
 
         DB::insert('
-            insert into posts (title, description, slug, thumbnail, content, read_time, published, pinned)
-            values (?, ?, ?, ?, ?, ?, ?, ?)
+            insert into posts (secondary_id, title, description, slug, thumbnail, content, read_time, published_on, published, pinned)
+            values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ', [
+            $request->secondary_id,
             $request->title,
             $request->description,
             $slug,
             $request->thumbnail,
             $request->content,
             $read_time,
+            $request->published_on,
             $request->published,
             $request->pinned,
         ]);
@@ -81,15 +83,17 @@ class DashboardController extends Controller
 
         DB::update('
             update posts
-            set title = ?, description = ?, slug = ?, thumbnail = ?, content = ?, read_time = ?, published = ?, pinned = ?
+            set secondary_id = ?, title = ?, description = ?, slug = ?, thumbnail = ?, content = ?, read_time = ?, published_on = ?, published = ?, pinned = ?
             where id = ?
         ', [
+            $request->secondary_id,
             $request->title,
             $request->description,
             $slug,
             $request->thumbnail,
             $request->content,
             $read_time,
+            $request->published_on,
             $request->published,
             $request->pinned,
             $request->id,

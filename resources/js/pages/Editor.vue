@@ -11,11 +11,13 @@ const props = defineProps({
 });
 
 const form = useForm({
+	secondary_id: "",
 	title: "",
 	description: "",
 	slug: "",
 	thumbnail: "",
 	content: "",
+	published_on: "",
 	published: false,
 	pinned: false,
 	...props.post,
@@ -41,6 +43,12 @@ function submit() {
 			class="flex flex-col gap-3"
 			@submit.prevent="submit"
 		>
+			<input
+				v-model="form.secondary_id"
+				type="number"
+				class="p-2 w-full text-neutral-900 rounded"
+				placeholder="Secondary ID"
+			>
 			<input
 				v-model="form.title"
 				class="p-2 w-full text-neutral-900 rounded"
@@ -73,6 +81,11 @@ function submit() {
 				:rows="18"
 				:spellcheck="false"
 			/>
+			<input
+				v-model="form.published_on"
+				type="date"
+				class="p-2 w-full text-neutral-900 rounded"
+			>
 			<label class="flex items-center text-lg gap-2">
 				<input
 					v-model="form.published"
