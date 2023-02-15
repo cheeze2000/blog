@@ -7,6 +7,8 @@ import MarkdownIt from "markdown-it";
 import MarkdownItUnderline from "markdown-it-underline";
 import renderMathInElement from "katex/dist/contrib/auto-render.js";
 import Prism from "prismjs";
+import "prismjs/components/prism-c";
+import "prismjs/components/prism-cpp";
 import "prismjs/components/prism-diff";
 import "prismjs/components/prism-haskell";
 import "prismjs/components/prism-markup-templating";
