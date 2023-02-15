@@ -16,7 +16,7 @@ class PostController extends Controller
             select id, title, description, pinned, concat('posts/', id, '/', slug) as url, thumbnail, read_time
             from posts
             where published = true
-            order by pinned desc, created_at desc
+            order by pinned desc, id desc
             limit 7 offset ?
         ", [$offset]);
 

@@ -15,7 +15,7 @@ class DashboardController extends Controller
         $posts = DB::select('
             select id, title, description, published, pinned
             from posts
-            order by pinned desc, created_at desc
+            order by pinned desc, id desc
         ');
 
         return Inertia::render('Dashboard', [
@@ -39,7 +39,6 @@ class DashboardController extends Controller
             select id, title, description, slug, thumbnail, content, published, pinned
             from posts
             where id = ?
-            order by pinned desc, created_at desc
         ', [$id]);
 
         $post = $posts[0];
