@@ -33,6 +33,15 @@ const md = new MarkdownIt({
 })
 	.use(MarkdownItUnderline);
 
+const dr = md.renderer.rules.link_open || function (tokens, idx, options, env, self) {
+	return self.renderToken(tokens, idx, options);
+};
+
+md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+	tokens[idx].attrPush(["target", "_blank"]);
+	return dr(tokens, idx, options, env, self);
+};
+
 onMounted(() => renderMathInElement(document.body, {
 	delimiters: [
 		{ left: "$$", right: "$$", display: true },
